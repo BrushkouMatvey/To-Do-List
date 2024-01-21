@@ -17,6 +17,9 @@
 		F527D2632B5D91550015FDCD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527D2622B5D91550015FDCD /* Item.swift */; };
 		F527D2652B5D94690015FDCD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527D2642B5D94690015FDCD /* Constants.swift */; };
 		F527D2682B5DA7660015FDCD /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527D2672B5DA7660015FDCD /* UITableViewCellExtension.swift */; };
+		F527D26B2B5DC2B60015FDCD /* PListSaveLoadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527D26A2B5DC2B60015FDCD /* PListSaveLoadService.swift */; };
+		F527D2712B5DC5760015FDCD /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527D2702B5DC5760015FDCD /* DataSource.swift */; };
+		F527D2742B5DC5AB0015FDCD /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527D2732B5DC5AB0015FDCD /* Delegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		F527D2622B5D91550015FDCD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		F527D2642B5D94690015FDCD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F527D2672B5DA7660015FDCD /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
+		F527D26A2B5DC2B60015FDCD /* PListSaveLoadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PListSaveLoadService.swift; sourceTree = "<group>"; };
+		F527D2702B5DC5760015FDCD /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		F527D2732B5DC5AB0015FDCD /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				F527D2622B5D91550015FDCD /* Item.swift */,
+				F527D26A2B5DC2B60015FDCD /* PListSaveLoadService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -90,7 +97,7 @@
 		F527D25F2B5D91220015FDCD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F527D24B2B5D91030015FDCD /* ToDoListViewController.swift */,
+				F527D26C2B5DC5230015FDCD /* ToDoListViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -115,6 +122,24 @@
 			isa = PBXGroup;
 			children = (
 				F527D2672B5DA7660015FDCD /* UITableViewCellExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F527D26C2B5DC5230015FDCD /* ToDoListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F527D26F2B5DC56B0015FDCD /* Extensions */,
+				F527D24B2B5D91030015FDCD /* ToDoListViewController.swift */,
+			);
+			path = ToDoListViewController;
+			sourceTree = "<group>";
+		};
+		F527D26F2B5DC56B0015FDCD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F527D2702B5DC5760015FDCD /* DataSource.swift */,
+				F527D2732B5DC5AB0015FDCD /* Delegate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -190,12 +215,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F527D26B2B5DC2B60015FDCD /* PListSaveLoadService.swift in Sources */,
 				F527D2632B5D91550015FDCD /* Item.swift in Sources */,
 				F527D24C2B5D91030015FDCD /* ToDoListViewController.swift in Sources */,
 				F527D2482B5D91030015FDCD /* AppDelegate.swift in Sources */,
 				F527D24A2B5D91030015FDCD /* SceneDelegate.swift in Sources */,
 				F527D2522B5D91030015FDCD /* ToDoList.xcdatamodeld in Sources */,
+				F527D2742B5DC5AB0015FDCD /* Delegate.swift in Sources */,
 				F527D2682B5DA7660015FDCD /* UITableViewCellExtension.swift in Sources */,
+				F527D2712B5DC5760015FDCD /* DataSource.swift in Sources */,
 				F527D2652B5D94690015FDCD /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
