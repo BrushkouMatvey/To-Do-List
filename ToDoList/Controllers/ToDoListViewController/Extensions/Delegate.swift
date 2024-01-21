@@ -24,7 +24,7 @@ extension ToDoListViewController{
         if let cell = tableView.cellForRow(at: indexPath){
             
             cell.changeAccessoryType(
-                type: item.isDone ? .checkmark : .none,
+                type: item.isComplete ? .checkmark : .none,
                 animated: true,
                 duration: 0.3
             )
