@@ -21,7 +21,7 @@ extension ToDoListViewController{
         let item = items[indexPath.row]
         
         cell.textLabel?.text = item.message
-        cell.accessoryType = item.isDone ? .checkmark : .none
+        cell.accessoryType = item.isComplete ? .checkmark : .none
         
         return cell
     }
