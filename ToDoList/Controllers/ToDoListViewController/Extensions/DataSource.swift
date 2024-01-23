@@ -11,14 +11,14 @@ import UIKit
 extension ToDoListViewController{
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        items.count
+        toDoItemsContainer.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath)
         
-        let item = items[indexPath.row]
+        let item = toDoItemsContainer[indexPath.row]
         
         cell.textLabel?.text = item.message
         cell.accessoryType = item.isComplete ? .checkmark : .none

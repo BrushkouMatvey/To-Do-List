@@ -12,9 +12,11 @@ extension ToDoListViewController{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let item = items[indexPath.row]
-        item.switchIsDone()
-        saveLoadService.saveArray(items)
+        let item = toDoItemsContainer[indexPath.row]
+        item.isComplete = !item.isComplete
+        
+        toDoItemsContainer.save()
+        
         tableView.deselectRow(at: indexPath, animated: true)
         animateAccessoryTypeCheckmark(tableView, indexPath, item)
     }

@@ -7,11 +7,11 @@
 
 import Foundation
 
-class PListSaveLoadService<T: Codable>{
+class PListSaveLoadService<T: Codable>: SaveLoadable{
     
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(Constants.dataFileName)
     
-    func loadArray() -> [T]{
+    func load() -> [T]{
         
         var items = [T]()
         if let data = try? Data(contentsOf: dataFilePath!){
@@ -27,7 +27,7 @@ class PListSaveLoadService<T: Codable>{
         return items
     }
     
-    func saveArray(_ items: [T]){
+    func save(_ items: [T]){
         let encoder = PropertyListEncoder()
         do{
             let data = try encoder.encode(items)
@@ -36,4 +36,6 @@ class PListSaveLoadService<T: Codable>{
             print("Can't save data : \(error)")
         }
     }
+    
+    func save() {}
 }

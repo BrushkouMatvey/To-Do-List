@@ -6,26 +6,25 @@
 //
 
 import UIKit
+import CoreData
 
 class ToDoListViewController: UITableViewController {
     
-    var items = [Item]()
-    let saveLoadService = PListSaveLoadService<Item>()
-    
+    let toDoItemsContainer = CoreDataContainer<Item>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        items = saveLoadService.loadArray()
+        
+        toDoItemsContainer.load()
     }
     
     @IBAction func onAddButtonClicked(_ sender: UIBarButtonItem) {
         
         var textField = UITextField()
         
-        var alertController = UIAlertController(title: "Add new Item", message: "You can add new ToDo Item" + "😀", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Add new Item", message: "You can add new ToDo Item" + "😀", preferredStyle: .alert)
         
-        var addAlertAction = UIAlertAction(title: "Add", style: .default) { action in
+        let addAlertAction = UIAlertAction(title: "Add", style: .default) { action in
             self.addNewItem(message: textField.text!)
         }
         
@@ -40,9 +39,13 @@ class ToDoListViewController: UITableViewController {
     
     
     private func addNewItem(message: String){
-        items.append(Item(message, false))
-        saveLoadService.saveArray(items)
-        tableView.reloadData()
+        
+        if let item = toDoItemsContainer.createAndAddEntity(){
+            item.message = message
+            item.isComplete = false
+            toDoItemsContainer.save()
+            tableView.reloadData()
+        }
     }
 }
 

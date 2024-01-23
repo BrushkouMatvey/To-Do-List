@@ -14,12 +14,12 @@
 		F527D2522B5D91030015FDCD /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F527D2502B5D91030015FDCD /* ToDoList.xcdatamodeld */; };
 		F527D2542B5D91040015FDCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F527D2532B5D91040015FDCD /* Assets.xcassets */; };
 		F527D2572B5D91040015FDCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F527D2552B5D91040015FDCD /* LaunchScreen.storyboard */; };
-		F527D2632B5D91550015FDCD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527D2622B5D91550015FDCD /* Item.swift */; };
 		F527D2652B5D94690015FDCD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527D2642B5D94690015FDCD /* Constants.swift */; };
 		F527D2682B5DA7660015FDCD /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527D2672B5DA7660015FDCD /* UITableViewCellExtension.swift */; };
-		F527D26B2B5DC2B60015FDCD /* PListSaveLoadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527D26A2B5DC2B60015FDCD /* PListSaveLoadService.swift */; };
 		F527D2712B5DC5760015FDCD /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527D2702B5DC5760015FDCD /* DataSource.swift */; };
 		F527D2742B5DC5AB0015FDCD /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527D2732B5DC5AB0015FDCD /* Delegate.swift */; };
+		F56B5A872B5FE7630058A226 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B5A862B5FE7630058A226 /* AppHelper.swift */; };
+		F56B5A8C2B5FF15F0058A226 /* CoreDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B5A8B2B5FF15F0058A226 /* CoreDataContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,12 +32,12 @@
 		F527D2532B5D91040015FDCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F527D2562B5D91040015FDCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F527D2582B5D91040015FDCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F527D2622B5D91550015FDCD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		F527D2642B5D94690015FDCD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F527D2672B5DA7660015FDCD /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
-		F527D26A2B5DC2B60015FDCD /* PListSaveLoadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PListSaveLoadService.swift; sourceTree = "<group>"; };
 		F527D2702B5DC5760015FDCD /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		F527D2732B5DC5AB0015FDCD /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
+		F56B5A862B5FE7630058A226 /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
+		F56B5A8B2B5FF15F0058A226 /* CoreDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +88,7 @@
 		F527D25E2B5D91170015FDCD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F527D2622B5D91550015FDCD /* Item.swift */,
-				F527D26A2B5DC2B60015FDCD /* PListSaveLoadService.swift */,
+				F56B5A882B5FF0B20058A226 /* SaveLoad */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -113,6 +112,7 @@
 		F527D2662B5DA6D70015FDCD /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				F56B5A852B5FE7570058A226 /* Helpers */,
 				F527D2692B5DB6670015FDCD /* Extensions */,
 			);
 			path = Utility;
@@ -142,6 +142,22 @@
 				F527D2732B5DC5AB0015FDCD /* Delegate.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F56B5A852B5FE7570058A226 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F56B5A862B5FE7630058A226 /* AppHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F56B5A882B5FF0B20058A226 /* SaveLoad */ = {
+			isa = PBXGroup;
+			children = (
+				F56B5A8B2B5FF15F0058A226 /* CoreDataContainer.swift */,
+			);
+			path = SaveLoad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,8 +231,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F527D26B2B5DC2B60015FDCD /* PListSaveLoadService.swift in Sources */,
-				F527D2632B5D91550015FDCD /* Item.swift in Sources */,
 				F527D24C2B5D91030015FDCD /* ToDoListViewController.swift in Sources */,
 				F527D2482B5D91030015FDCD /* AppDelegate.swift in Sources */,
 				F527D24A2B5D91030015FDCD /* SceneDelegate.swift in Sources */,
@@ -224,7 +238,9 @@
 				F527D2742B5DC5AB0015FDCD /* Delegate.swift in Sources */,
 				F527D2682B5DA7660015FDCD /* UITableViewCellExtension.swift in Sources */,
 				F527D2712B5DC5760015FDCD /* DataSource.swift in Sources */,
+				F56B5A872B5FE7630058A226 /* AppHelper.swift in Sources */,
 				F527D2652B5D94690015FDCD /* Constants.swift in Sources */,
+				F56B5A8C2B5FF15F0058A226 /* CoreDataContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
