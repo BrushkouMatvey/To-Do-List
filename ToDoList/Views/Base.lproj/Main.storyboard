@@ -30,7 +30,13 @@
                             <outlet property="delegate" destination="8l7-mQ-gXm" id="5zX-36-qWa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="ToDo List" largeTitleDisplayMode="always" id="YSg-nR-UpA"/>
+                    <navigationItem key="navigationItem" title="ToDo List" largeTitleDisplayMode="always" id="YSg-nR-UpA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="KqN-a1-bH4">
+                            <connections>
+                                <action selector="onAddButtonClicked:" destination="8l7-mQ-gXm" id="MJG-cP-Xk1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmD-do-dsz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
