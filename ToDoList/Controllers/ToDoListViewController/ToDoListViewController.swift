@@ -15,7 +15,7 @@ class ToDoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        toDoItemsContainer.load()
+        loadItems()
     }
     
     @IBAction func onAddButtonClicked(_ sender: UIBarButtonItem) {
@@ -43,8 +43,7 @@ class ToDoListViewController: UITableViewController {
         if let item = toDoItemsContainer.createAndAddEntity(){
             item.message = message
             item.isComplete = false
-            toDoItemsContainer.save()
-            tableView.reloadData()
+            saveItems()
         }
     }
 }
