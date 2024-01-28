@@ -8,7 +8,7 @@
 import UIKit
 
 // MARK: TableView DataSource methods
-extension ToDoListViewController{
+extension ItemsViewController{
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         toDoItemsContainer.count
@@ -16,7 +16,7 @@ extension ToDoListViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.itemCellIdentifier, for: indexPath)
         
         let item = toDoItemsContainer[indexPath.row]
         

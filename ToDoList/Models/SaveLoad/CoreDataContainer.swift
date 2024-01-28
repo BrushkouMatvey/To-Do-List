@@ -27,14 +27,14 @@ class CoreDataContainer<T: NSManagedObject>{
         return item
     }
     
-    func load(_ predicate: NSPredicate? = nil, _ sortDescriptors: [NSSortDescriptor] = []) {
+    func load(_ predicate: NSCompoundPredicate? = nil, _ sortDescriptors: [NSSortDescriptor] = []) {
                         
         guard let entityName else {
             print("Return entityName")
             return
         }
         
-        var request = NSFetchRequest<T>(entityName: entityName)
+        let request = NSFetchRequest<T>(entityName: entityName)
         
         if let predicate { request.predicate = predicate }
         request.sortDescriptors = sortDescriptors

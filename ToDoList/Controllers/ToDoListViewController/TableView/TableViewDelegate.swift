@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: TableView Delegate methods
-extension ToDoListViewController{
+extension ItemsViewController{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -22,7 +22,7 @@ extension ToDoListViewController{
         animateAccessoryTypeCheckmark(tableView, indexPath, item)
     }
     
-    private func animateAccessoryTypeCheckmark(_ tableView: UITableView, _ indexPath: IndexPath, _ item: Item) {
+    internal func animateAccessoryTypeCheckmark(_ tableView: UITableView, _ indexPath: IndexPath, _ item: Item) {
         
         if let cell = tableView.cellForRow(at: indexPath){
             

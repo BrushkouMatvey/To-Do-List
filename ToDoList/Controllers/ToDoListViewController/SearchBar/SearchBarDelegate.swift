@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import CoreData
 
-extension ToDoListViewController : UISearchBarDelegate{
+extension ItemsViewController : UISearchBarDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text?.count == 0{
@@ -25,8 +25,13 @@ extension ToDoListViewController : UISearchBarDelegate{
     }
     
     func searchItems(with str: String){
+        
+        let compoundPredicate = NSCompoundPredicate(
+            andPredicateWithSubpredicates: [NSPredicate(format: "message CONTAINS[cd] %@", str)]
+        )
+        
         loadItems(
-            NSPredicate(format: "message CONTAINS[cd] %@", str),
+            compoundPredicate,
             [NSSortDescriptor(key: "message", ascending: true)]
         )
     }

@@ -1,17 +1,18 @@
 //
-//  ViewController.swift
+//  CategoriesViewController.swift
 //  ToDoList
 //
-//  Created by Matvey Brushkou on 21.01.24.
+//  Created by Matvey Brushkou on 27.01.24.
 //
 
+import Foundation
 import UIKit
 import CoreData
 
-class ToDoListViewController: UITableViewController {
+class CategoriesViewController : UITableViewController{
     
-    let toDoItemsContainer = CoreDataContainer<Item>()
-
+    let itemsContainer = CoreDataContainer<Category>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,10 +23,10 @@ class ToDoListViewController: UITableViewController {
         
         var textField = UITextField()
         
-        let alertController = UIAlertController(title: "Add new Item", message: "You can add new ToDo Item" + "😀", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Add new Category", message: "You can add new Category" + "😀", preferredStyle: .alert)
         
         let addAlertAction = UIAlertAction(title: "Add", style: .default) { action in
-            self.addNewItem(message: textField.text!)
+            self.addNewItem(name: textField.text!)
         }
         
         alertController.addTextField { configurationTextField in
@@ -34,17 +35,16 @@ class ToDoListViewController: UITableViewController {
         
         alertController.addAction(addAlertAction)
         present(alertController, animated: true)
-        
     }
     
     
-    private func addNewItem(message: String){
+    private func addNewItem(name: String){
         
-        if let item = toDoItemsContainer.createAndAddEntity(){
-            item.message = message
-            item.isComplete = false
+        if let item = itemsContainer.createAndAddEntity(){
+ 
+            item.name = name
+            item.id = Int32(itemsContainer.count - 1)
             saveItems()
         }
     }
 }
-

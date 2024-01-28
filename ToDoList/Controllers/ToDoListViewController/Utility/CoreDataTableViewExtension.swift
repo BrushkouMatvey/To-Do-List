@@ -7,9 +7,12 @@
 
 import Foundation
 
-extension ToDoListViewController{
+extension ItemsViewController{
     
-    func loadItems(_ predicate: NSPredicate? = nil, _ sortDescriptors: [NSSortDescriptor] = []){
+    func loadItems(
+        _ predicate: NSCompoundPredicate? = nil,
+        _ sortDescriptors: [NSSortDescriptor] = []){
+            
         toDoItemsContainer.load(predicate, sortDescriptors)
         tableView.reloadData()
     }

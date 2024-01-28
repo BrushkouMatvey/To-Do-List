@@ -8,6 +8,8 @@
 import Foundation
 
 class Constants{
-    static let cellIdentifier = "ToDoCell"
+    static let goToItemsSegueIdentifier = "GoToItems"
+    static let itemCellIdentifier = "ToDoItem"
+    static let categoryCellIdentifier = "ToDoCategory"
     static let dataFileName = "ToDoListData.plist"
 }
