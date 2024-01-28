@@ -8,17 +8,27 @@
 import UIKit
 import CoreData
 
-class ItemsViewController: UITableViewController {
-    
-    let toDoItemsContainer = CoreDataContainer<Item>()
 
+class ItemsViewController: CoreDataTableViewControllerBase<Item> {
+    
+    override var cellIdentifier: String { Constants.itemCellIdentifier }
+    
     var parentCategory: Category?{
         didSet{
-            let compoundPredicate = NSCompoundPredicate(
-                andPredicateWithSubpredicates: [NSPredicate(format: "parentCategory.id == %i", parentCategory!.id)]
-            )
-            loadItems(compoundPredicate)
+            loadItems(categoryPredicate)
         }
+    }
+    
+    override func viewDidLoad() {
+        tableView.delegate = self
+    }
+    
+    //TODO: change to private
+    var categoryPredicate: NSCompoundPredicate? {
+        
+        guard let parentCategory else { return nil }
+        
+        return NSCompoundPredicate(andPredicateWithSubpredicates: [NSPredicate(format: "parentCategory.id == %i", parentCategory.id)])
     }
     
     @IBAction func onAddButtonClicked(_ sender: UIBarButtonItem) {
@@ -42,10 +52,11 @@ class ItemsViewController: UITableViewController {
     
     private func addNewItem(message: String){
         
-        if let item = toDoItemsContainer.createAndAddEntity(){
+        if let item = itemsContainer.createAndAddEntity(){
             item.message = message
             item.isComplete = false
             item.parentCategory = parentCategory
+
             saveItems()
         }
     }

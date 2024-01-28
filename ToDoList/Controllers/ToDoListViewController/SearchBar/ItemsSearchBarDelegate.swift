@@ -9,11 +9,12 @@ import Foundation
 import UIKit
 import CoreData
 
-extension ItemsViewController : UISearchBarDelegate{
+extension ItemsViewController: UISearchBarDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
         if searchBar.text?.count == 0{
-            loadItems()
+            loadItems(categoryPredicate)
             
             DispatchQueue.main.async {
                 searchBar.resignFirstResponder()

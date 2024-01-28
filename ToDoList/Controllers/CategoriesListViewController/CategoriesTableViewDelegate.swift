@@ -11,7 +11,6 @@ import UIKit
 extension CategoriesViewController{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("go to items page")
         performSegue(withIdentifier: Constants.goToItemsSegueIdentifier, sender: self)
     }
     

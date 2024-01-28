@@ -9,13 +9,12 @@ import Foundation
 import UIKit
 import CoreData
 
-class CategoriesViewController : UITableViewController{
+class CategoriesViewController : CoreDataTableViewControllerBase<Category>{
     
-    let itemsContainer = CoreDataContainer<Category>()
-    
+    override var cellIdentifier: String { Constants.categoryCellIdentifier }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loadItems()
     }
     
